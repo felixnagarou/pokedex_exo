@@ -6,10 +6,10 @@
 </head>
 <body>
 <main>
-  <form action="#" th:action="@{pokemonInfo/search}" method="post" th:object="${pokemon}">
+  <form action="#" th:action="@{/pokemonInfo/search}" method="post" th:object="${pokemon}">
       <label for="name" >Enter Pokémon name or Pokédex Entry</label>
       <input type="text" id="name" th:field="*{name}" required>
-    <a th:href="@{/pokemonInfo/}" ></a>
+
     <button>Search</button>
   </form>
     <table>
@@ -36,7 +36,7 @@
         </tr>
         </tbody>
     </table>
-    <p th:if="${pokemon != null}"> Pokémon not found :(</p>
+    <p th:if="${pokemon == null}"> Pokémon not found :(</p>
     <hr>
 </main>
 

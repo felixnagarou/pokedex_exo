@@ -21,14 +21,16 @@ public class PokemonController {
 
     @GetMapping("/{name}")
     public String getPokemonByIdOrName(@PathVariable("name") String name, Model model){
+        model.addAttribute("name", name);
         model.addAttribute("pokemon", pokemonService.getPokemonDataJsonNode(name));
         return "pokemonInfo/pokemonForm";
     }
 
-    @PostMapping("/search")
-    public String searchPokemon(Model model, String name){
-        model.addAttribute("name", name);
-        return "redirect:/pokemonInfo";
-    }
+   @PostMapping("/search")
+   public String searchPokemon(Model model, String name){
+       model.addAttribute("name", name);
+       model.addAttribute("pokemon", pokemonService.getPokemonDataJsonNode(name));
+       return "pokemonInfo/pokemonForm";
+   }
 
 }
