@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>POKEDEX</title>
+</head>
+<body>
+<main>
+  <form action="#" th:action="@{pokemonInfo/search}" method="post" th:object="${pokemon}">
+      <label for="name" >Enter Pokémon name or Pokédex Entry</label>
+      <input type="text" id="name" th:field="*{name}" required>
+    <a th:href="@{/pokemonInfo/}" ></a>
+    <button>Search</button>
+  </form>
+    <table>
+        <thead>
+        <tr>
+            <th>Name :</th>
+            <th> National Pokédex Index Number :</th>
+            <th>Type(s) :</th>
+            <th>Abilities :</th>
+            <th>Appearance :</th>
+            <th>Size :</th>
+            <th>Height :</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="*{pokemon.name}"></td>
+            <td th:text="*{pokemon.nationalPokedexNumber}"></td>
+            <td th:text="*{pokemon.types}"></td>
+            <td th:text="*{pokemon.abilities}"></td>
+            <td ><img th:src="*{pokemon.pokemonImageUrl}" alt="img"></td>
+            <td th:text="*{pokemon.size}"></td>
+            <td th:text="*{pokemon.weight}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <p th:if="${pokemon != null}"> Pokémon not found :(</p>
+    <hr>
+</main>
+
+</body>
+</html>
