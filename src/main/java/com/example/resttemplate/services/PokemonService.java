@@ -45,7 +45,7 @@ public class PokemonService {
                 .nationalPokedexNumber(id)
                 .types(typeNames)
                 .abilities(abilitiesNames)
-                .pokemonImageUrl("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/" + String.format("%03d", id) +".png")
+                .pokemonImageUrl("http://assets.pokemon.com/assets/cms2/img/pokedex/full/" + String.format("%03d", id) +".png")
                 .size(entity.getBody().get("height").asInt())
                 .weight(entity.getBody().get("weight").asInt())
                 .build();
