@@ -9,12 +9,14 @@
 </head>
 <body>
 <main class="container">
-  <form action="#" th:action="@{/pokemonInfo/search}" method="post" th:object="${pokemon}" >
-      <label for="name" class="fw-bold" >Enter Pokémon name or Pokédex Entry</label>
-      <input type="text" id="name" th:field="*{name}" required class="form-control">
+    <div class="mb-3 text-center">
+    <form action="#" th:action="@{/pokemonInfo/search}" method="post" th:object="${pokemon}" >
+        <label for="name" class="fw-bold" ><h2 class="text-secondary">Enter Pokémon name or Pokédex Entry</h2></label>
+        <input type="text" id="name" th:field="*{name}" required class="form-control">
 
-    <button class="btn btn-outline-info">Search</button>
-  </form>
+      <button class="btn btn-outline-info">Search</button>
+    </form>
+    </div>
     <table class="rounded overflow-hidden table table-dark table-striped text-center align-middle">
         <thead>
         <tr>
