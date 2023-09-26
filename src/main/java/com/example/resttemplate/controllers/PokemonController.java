@@ -29,7 +29,7 @@ public class PokemonController {
    @PostMapping("/search")
    public String searchPokemon(Model model, String name){
        model.addAttribute("name", name);
-       model.addAttribute("pokemon", pokemonService.getPokemonDataJsonNode(name));
+       model.addAttribute("pokemon", pokemonService.getPokemonDataJsonNode(name.toLowerCase()));
        return "pokemonInfo/pokemonForm";
    }
 
