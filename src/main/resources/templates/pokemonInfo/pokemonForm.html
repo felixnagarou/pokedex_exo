@@ -34,11 +34,11 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
+        <tr >
             <td th:text="*{pokemon.name}"></td>
             <td th:text="*{pokemon.nationalPokedexNumber}"></td>
-            <td th:text="*{pokemon.types}"></td>
-            <td th:text="*{pokemon.abilities}"></td>
+            <td ><p th:each="String : ${pokemon.types}"><span th:text="*{String}" class="btn btn-secondary"></span></p></td>
+            <td ><p th:each="String: ${pokemon.abilities}"><span th:text="*{String}" class="btn btn-outline-warning"></span></p></td>
             <td ><img th:src="*{pokemon.pokemonImageUrl}" alt="img"></td>
             <td th:text="*{pokemon.size}"></td>
             <td th:text="*{pokemon.weight}"></td>
