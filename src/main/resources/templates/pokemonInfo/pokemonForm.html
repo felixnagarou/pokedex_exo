@@ -48,10 +48,8 @@
     <p th:if="${pokemon == null}"> Pokémon not found :(</p>
     <hr>
     <div id ="footNav" class="text-center">
-        <a th:href="@{/pokemonInfo/{name}(name =${pokemon.nationalPokedexNumber -1})}"><button class="btn btn-outline-dark">prev</button></a>
-    </div>
-    <div>
-        <a th:href="@{/pokemonInfo/{name}(name =${pokemon.nationalPokedexNumber+1})}"><button class="btn btn-dark">next</button></a>
+        <a th:href="@{/pokemonInfo/{name}(name =${pokemon.nationalPokedexNumber -1})}"><button th:unless="${pokemon.nationalPokedexNumber == 1}" class="btn btn-outline-dark">prev</button></a>
+        <a th:href="@{/pokemonInfo/{name}(name =${pokemon.nationalPokedexNumber+1})}"><button th:unless="${pokemon.nationalPokedexNumber == 1017}" class="btn btn-dark">next</button></a>
     </div>
 </main>
 
